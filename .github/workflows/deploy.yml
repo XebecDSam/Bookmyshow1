@@ -1,0 +1,64 @@
+name: Deploy BookMyShow PWA to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 📦 Install root dependencies
+        run: npm ci || npm install
+
+      - name: 📦 Install frontend dependencies
+        working-directory: ./frontend
+        run: npm ci || npm install
+
+      - name: 🚀 Build BookMyShow PWA
+        run: npm run build
+
+      - name: 🧪 Run test suite
+        run: npm test
+
+      - name: 🌐 Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 📤 Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './frontend/dist'
+
+      - name: 🚀 Deploy to GitHub Pages (Actions Source)
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: 🌿 Deploy to gh-pages branch (Branch Source)
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: frontend/dist
+          clean: true
