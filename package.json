@@ -7,6 +7,7 @@
     "start": "node backend/server.js",
     "backend": "npm run start --prefix backend",
     "frontend": "npm run dev --prefix frontend",
+    "postinstall": "npm install --prefix frontend",
     "build": "node scripts/build.js",
     "test": "node scripts/test-runner.js"
   },

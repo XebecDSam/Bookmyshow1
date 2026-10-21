@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
-  <rect width="512" height="512" rx="108" fill="#090B10"/>
-  <rect x="40" y="40" width="432" height="432" rx="88" fill="#F84464"/>
-  <!-- Ticket shape -->
-  <path d="M128 170C128 158.954 136.954 150 148 150H364C375.046 150 384 158.954 384 170V224C366.327 224 352 238.327 352 256C352 273.673 366.327 288 384 288V342C384 353.046 375.046 362 364 362H148C136.954 362 128 353.046 128 342V288C145.673 288 160 273.673 160 256C160 238.327 145.673 224 128 224V170Z" fill="#FFFFFF"/>
-  <!-- BMS Branding inside Ticket -->
-  <circle cx="256" cy="256" r="32" fill="#F84464"/>
-  <path d="M256 190V210M256 302V322" stroke="#F84464" stroke-width="8" stroke-linecap="round" stroke-dasharray="8 8"/>
-</svg>
