@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#F84464"/>
+  <!-- Ticket shape inside safe zone (approx 400x400 center) -->
+  <path d="M148 180C148 168.954 156.954 160 168 160H344C355.046 160 364 168.954 364 180V224C346.327 224 332 238.327 332 256C332 273.673 346.327 288 364 288V332C364 343.046 355.046 352 344 352H168C156.954 352 148 343.046 148 332V288C165.673 288 180 273.673 180 256C180 238.327 165.673 224 148 224V180Z" fill="#FFFFFF"/>
+  <circle cx="256" cy="256" r="28" fill="#F84464"/>
+  <path d="M256 195V215M256 297V317" stroke="#F84464" stroke-width="7" stroke-linecap="round" stroke-dasharray="7 7"/>
+</svg>
